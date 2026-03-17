@@ -1,0 +1,150 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+background:#eee;
+}
+
+/* LOGIN */
+
+.login-container{
+width:100%;
+padding:40px;
+}
+
+.login-container input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+background:#3da0d8;
+border-radius:10px;
+}
+
+.login-container button{
+display:block;
+margin:30px auto;
+padding:15px 40px;
+background:#3da0d8;
+border:none;
+border-radius:10px;
+font-size:18px;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+display:flex;
+flex-direction:column;
+}
+
+.menu{
+background:#3da0d8;
+padding:20px;
+}
+
+.menu ul{
+list-style:none;
+}
+
+.menu li{
+padding:15px 0;
+border-bottom:1px solid black;
+}
+
+.conteudo{
+padding:20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:20px;
+text-align:center;
+}
+
+.orcamento{
+margin-top:20px;
+background:white;
+padding:20px;
+border-radius:20px;
+display:flex;
+justify-content:space-between;
+}
+
+/* FORMULÁRIO */
+
+.form-container{
+padding:40px;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+}
+
+.form-grid input{
+padding:12px;
+}
+
+.form-grid button{
+padding:12px;
+background:#3da0d8;
+border:none;
+}
+
+/* TABLET */
+
+@media (min-width:768px){
+
+.cards{
+grid-template-columns:repeat(2,1fr);
+}
+
+.form-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+/* DESKTOP */
+
+@media (min-width:1024px){
+
+.dashboard{
+flex-direction:row;
+}
+
+.menu{
+width:250px;
+height:100vh;
+}
+
+.conteudo{
+flex:1;
+}
+
+.cards{
+grid-template-columns:repeat(4,1fr);
+}
+
+.login-container{
+width:400px;
+margin:auto;
+margin-top:100px;
+background:white;
+border-radius:10px;
+}
+
+}
