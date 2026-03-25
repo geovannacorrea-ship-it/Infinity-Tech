@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<style>
+:root {
+    --bg: #0F172A;
+    --primary: #2563EB;
+    --secondary: #38BDF8;
+    --text: #E2E8F0;
+    --gray: #94A3B8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Layout principal */
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* CARD */
+.login {
+    width: 100%;
+    max-width: 440px;
+    padding: 40px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: aparecer 0.8s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Título */
+.login h1 {
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Grupo */
+.campo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Label */
+label {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 6px;
+}
+
+/* Input */
+input {
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background: rgba(148,163,184,0.1);
+    color: var(--text);
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 10px var(--secondary);
+    transform: scale(1.02);
+}
+
+/* Olho */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 38px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.toggle-password:hover {
+    transform: scale(1.2);
+}
+
+/* Botão */
+button {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 20px var(--secondary);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* 🔥 RESPONSIVIDADE MELHORADA (O QUE VOCÊ PEDIU) */
+@media (max-width: 480px) {
+    .login {
+        max-width: 320px; /* diminui o card */
+        padding: 25px;
+        border-radius: 14px;
+    }
+
+    .login h1 {
+        font-size: 22px;
+    }
+
+    input {
+        padding: 12px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<main>
+    <section class="login">
+        <h1>Entrar</h1>
+
+        <form>
+            <div class="campo">
+                <label for="usuario">Email ou usuário</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+
+            <div class="campo">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <span class="toggle-password"
+                      onclick="togglePassword()"
+                      aria-label="Mostrar ou esconder senha">
+                    👁
+                </span>
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </section>
+</main>
+
+<script>
+function togglePassword() {
+    const senha = document.getElementById("senha");
+    senha.type = senha.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>
