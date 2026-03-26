@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estoque.css">
+    <title>Estoque - Refrigeração e Climatização</title>
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Peças e Insumos</h1>
+        <p>Controle de inventário: Unidades Condensadoras e Evaporadoras</p>
+    </header>
+
+    <main>
+        <section id="acoes">
+            <input type="text" placeholder="Filtrar por modelo ou BTU...">
+            <button>Novo Item</button>
+            <button>Relatório de Baixa</button>
+        </section>
+
+        <hr>
+
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Código SKA</th>
+                    <th>Descrição da Peça</th>
+                    <th>Marca/Compatibilidade</th>
+                    <th>Especificação (BTU/Gás)</th>
+                    <th>Qtd. Atual</th>
+                    <th>Preço Un.</th>
+                    <th>Localização (Prateleira)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AC-7782</td>
+                    <td>Compressor Rotativo</td>
+                    <td>LG / Samsung</td>
+                    <td>12.000 BTU - R410A</td>
+                    <td>5</td>
+                    <td>R$ 450,00</td>
+                    <td>Corredor A1</td>
+                </tr>
+                <tr>
+                    <td>AC-1029</td>
+                    <td>Placa Inverter Principal</td>
+                    <td>Daikin</td>
+                    <td>18.000 BTU</td>
+                    <td>2</td>
+                    <td>R$ 680,00</td>
+                    <td>Gaveta B4</td>
+                </tr>
+                <tr>
+                    <td>AC-5541</td>
+                    <td>Motor Ventilador Evaporadora</td>
+                    <td>Carrier / Midea</td>
+                    <td>9.000 a 12.000 BTU</td>
+                    <td>12</td>
+                    <td>R$ 185,00</td>
+                    <td>Corredor C2</td>
+                </tr>
+                <tr>
+                    <td>GAS-R22</td>
+                    <td>Fluido Refrigerante R22 (Botija)</td>
+                    <td>Dupont / Diversos</td>
+                    <td>13.6kg</td>
+                    <td>8</td>
+                    <td>R$ 950,00</td>
+                    <td>Depósito Externo</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <small>Última atualização: 25 de Março de 2026</small>
+    </footer>
+
+</body>
+</html>
