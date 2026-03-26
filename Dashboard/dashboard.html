@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <nav class="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li>Início</li>
+      <li>Novo orçamento</li>
+      <li>Clientes</li>
+      <li>Histórico</li>
+      <li>Serviços Padrão</li>
+      <li>Configurações</li>
+      <li>Sair</li>
+    </ul>
+  </nav>
+
+  <main class="conteudo">
+
+    <!-- GRÁFICO -->
+    <div class="grafico">
+      <h2>Vendas por mês</h2>
+      <canvas id="graficoVendas"></canvas>
+    </div>
+
+    <!-- CARDS -->
+    <div class="dashboard">
+      <div class="card">
+        <h3>Orçamentos</h3>
+        <p id="orcamentos"></p>
+      </div>
+
+      <div class="card">
+        <h3>Receita</h3>
+        <p id="receita"></p>
+      </div>
+
+      <div class="card">
+        <h3>Vendas</h3>
+        <p id="vendas"></p>
+      </div>
+      
+      <div class="card">
+        <h3>Conversão</h3>
+        <p id="conversao"></p>
+      </div>
+    </div>
+    
+    
+
+  </main>
+  
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</div>
+
+</body>
+</html>
