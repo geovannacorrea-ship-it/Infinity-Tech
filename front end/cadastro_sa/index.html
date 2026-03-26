@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quem é você?</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e3f2fd, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #0d47a1;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: block;
+      width: 220px;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 12px;
+      border: none;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(135deg, #2196f3, #0d47a1);
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(33,150,243,0.4);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Você é?</h1>
+
+  <button class="btn" onclick="window.location.href='cliente.html'">
+    👤 Cliente
+  </button>
+
+  <button class="btn" onclick="window.location.href='funcionario.html'">
+    🧾 Funcionário
+  </button>
+</div>
+
+</body>
+</html>

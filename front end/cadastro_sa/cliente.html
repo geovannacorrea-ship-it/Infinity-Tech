@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Cliente</title>
+
+  <style>
+   body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px; /* 🔥 corrigido (antes era 100px) */
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  /* 🔥 LOGO RESPONSIVA */
+  .logo {
+    text-align: center;
+    font-weight: bold;
+    color: #2196f3;
+    margin-bottom: 10px;
+
+    font-size: clamp(28px, 6vw, 60px);
+  }
+
+  /* 🔥 TÍTULO RESPONSIVO */
+  h2 {
+    text-align: center;
+    color: #0d47a1;
+
+    font-size: clamp(18px, 3vw, 26px);
+  }
+
+  /* 🔥 TEXTOS RESPONSIVOS */
+  label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    color: #1565c0;
+
+    font-size: clamp(14px, 2vw, 16px);
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+
+    font-size: clamp(14px, 2vw, 16px);
+  }
+
+  /* 🔥 BOTÕES RESPONSIVOS */
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #2196f3, #0d47a1);
+    color: white;
+    cursor: pointer;
+
+    font-size: clamp(14px, 2.5vw, 18px);
+  }
+
+  .back-btn {
+    margin-top: 15px;
+    width: 100%;
+    background: transparent;
+    border: 2px solid #2196f3;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2196f3;
+  }
+
+  .back-btn:hover {
+    background: #2196f3;
+    color: white;
+  }
+
+  </style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="logo">Infinity Tech</div>
+  <h2>Cadastro de Cliente</h2>
+
+  <label>Nome / Razão Social</label>
+  <input type="text">
+
+  <label>CPF ou CNPJ</label>
+  <input type="text">
+
+  <label>Telefone</label>
+  <input type="text">
+
+  <label>E-mail</label>
+  <input type="email">
+
+  <label>Endereço</label>
+  <input type="text">
+
+  <label>Tipo de Cliente</label>
+  <select>
+    <option>Residencial</option>
+    <option>Comercial</option>
+    <option>Industrial</option>
+  </select>
+
+ <button onclick="salvarCliente()">Salvar Cliente</button>
+
+  <button class="back-btn" onclick="window.location.href='index.html'">
+   ← Voltar para o início
+  </button>
+
+</div>
+
+<!-- 🔥 COLOCA O SCRIPT AQUI -->
+<script>
+function salvarCliente() {
+  const nome = document.querySelectorAll("input")[0].value;
+  const cpf = document.querySelectorAll("input")[1].value;
+  const telefone = document.querySelectorAll("input")[2].value;
+
+  const cliente = { nome, cpf, telefone };
+
+  let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+  clientes.push(cliente);
+
+  localStorage.setItem("clientes", JSON.stringify(clientes));
+
+  alert("Cliente salvo com sucesso!");
+
+  window.location.href = "lista.html";
+}
+</script>
+
+</body>
+</html>
